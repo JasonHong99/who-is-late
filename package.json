@@ -1,22 +1,15 @@
 {
-  "name": "who-is-late",
+  "name": "mango-learning",
   "version": "1.0.0",
-  "description": "An app to see who's late to appointment",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JasonHong99/who-is-late.git"
-  },
-  "keywords": [
-    "webapp"
-  ],
-  "author": "Jason Hong",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JasonHong99/who-is-late/issues"
-  },
-  "homepage": "https://github.com/JasonHong99/who-is-late#readme"
+  "dependencies": {
+    "mongodb": "^3.3.2"
+  }
 }
