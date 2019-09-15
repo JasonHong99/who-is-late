@@ -1,25 +1,53 @@
 
 //validate form
-var formCheck;
 $("document").ready(function() {
-  formCheck = $(".needs-validation");
-  formCheck.on("submit", validate);
+  var registerForm = $(".needs-validation");
+  registerForm.on("submit", function(){
+    validate(event, registerForm);
+  });
 });
 
-function validate(evt){
+function validate(event, registerForm){
   var password = $("#inputPassword");
   var passwordConfirmed = $("#inputPasswordConfirm");
-  formCheck.each(function(){
+  registerForm.each(function(){
     if (this.checkValidity() === false) {
-          evt.preventDefault();
-          evt.stopPropagation();
+          event.preventDefault();
+          event.stopPropagation();
     }
     $(this).addClass('was-validated');
   })
-  if(password.val() != passwordConfirmed.val()){
-    evt.preventDefault();
-    evt.stopPropagation();
-    passwordConfirmed.removeClass('is-valid');
-    passwordConfirmed.addClass('is-invalid');
+  if (password.val() != passwordConfirmed.val()) {
+      document.getElementById('inputPasswordConfirm').setCustomValidity('Passwords must match.');
+      event.preventDefault();
+      event.stopPropagation();
+  } else {
+      document.getElementById('inputPasswordConfirm').setCustomValidity('');
   }
+  //check if all imput field valid
+  registerForm.each(function(){
+    var formValid = true;
+    if($(this).is(':invalid')){
+      formValid = false;
+    }
+    if(formValid){
+      getData(formValid, registerForm);
+    }
+  })
+  event.preventDefault();
+  event.stopPropagation();
+}
+
+function getData(formValid, registerForm){
+  if(formValid){
+    var user = new Object();
+    user.firstName = $("#validationFirstName").val();
+    user.lastName = $("#validationLastName").val();
+    user.userName = $("#validationUsername").val();
+    user.city = $("#validationCity").val();
+    user.states = $("#validationState").val();
+    user.zip = $("#validationZip").val();
+    user.password = $("#inputPassword").val();
+  }
+  console.log(user);
 }
