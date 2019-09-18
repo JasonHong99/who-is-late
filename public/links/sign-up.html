@@ -19,18 +19,18 @@
 <body>
   <!-- Page Content -->
   <div class="container">
-    <form action="/app.js" method="get" class="needs-validation" novalidate>
+    <form action="/users" method="POST" class="needs-validation" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationFirstName">First name</label>
-          <input type="text" class="form-control" id="validationFirstName" placeholder="First name" required>
+          <input type="text" class="form-control" id="validationFirstName" placeholder="First name" name="firstName" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationLastName">Last name</label>
-          <input type="text" class="form-control" id="validationLastName" placeholder="Last name" required>
+          <input type="text" class="form-control" id="validationLastName" placeholder="Last name" name="lastName" required>
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -41,7 +41,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupPrepend">@</span>
             </div>
-            <input type="text" class="form-control" id="validationUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+            <input type="text" class="form-control" id="validationUsername" placeholder="Username" name="userName" aria-describedby="inputGroupPrepend" required>
             <div class="invalid-feedback">
               Please choose a username.
             </div>
@@ -51,21 +51,21 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationCity">City</label>
-          <input type="text" class="form-control" id="validationCity" placeholder="City" required>
+          <input type="text" class="form-control" id="validationCity" name="city" placeholder="City" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="validationState">State</label>
-          <input type="text" class="form-control" id="validationState" placeholder="State" required>
+          <input type="text" class="form-control" id="validationState" name="state" placeholder="State" required>
           <div class="invalid-feedback">
             Please provide a valid state.
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="validationZip">Zip</label>
-          <input type="text" class="form-control" id="validationZip" placeholder="Zip" required>
+          <input type="text" class="form-control" id="validationZip" name="zip" placeholder="Zip" required>
           <div class="invalid-feedback">
             Please provide a valid zip.
           </div>
@@ -74,7 +74,7 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+          <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
           <div class="invalid-feedback">
             Please provide a valid password.
           </div>
@@ -106,7 +106,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.slim.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="validation.js"></script>
+  <script src="signUpValidation.js"></script>
 
 </body>
 
