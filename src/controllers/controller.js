@@ -50,7 +50,7 @@ const deleteUser = (req, res) => {
 }
 
 const getUserByUserName = (req, res) => {
-  console.log(req.body.userName);
+  console.log(req.body);
   User.find({ userName: req.body.userName}, (err, user) => {
     if(err){
       res.send(err);

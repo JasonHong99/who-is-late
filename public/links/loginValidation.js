@@ -14,18 +14,19 @@ function validate(event, loginForm){
     }
     $(this).addClass('was-validated');
   })
+
+  // check if all imput field valid
+  loginForm.each(function(){
+    var formValid = true;
+    if($(this).is(':invalid')){
+      formValid = false;
+    }
+    if(formValid){
+      loginForm.attr('action', '/users/' + $(inputUsername).val());
+      console.log(loginForm.attr('action'));
+    }
+  })
 }
-  //check if all imput field valid
-//   loginForm.each(function(){
-//     var formValid = true;
-//     if($(this).is(':invalid')){
-//       formValid = false;
-//     }
-//     if(formValid){
-//       getData();
-//     }
-//   })
-// }
 //AJAX get call to retreive data (not working CORS policy)
 // function getData(){
 //   console.log("hahah");

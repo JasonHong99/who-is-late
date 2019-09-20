@@ -10,13 +10,13 @@ const routes = (app) => {
   .get(getUser)
   .post(addNewUser);
 
-  app.route('/test')
-  .get(getUserByUserName);
+  app.route('/users/:userName')
+  .post(getUserByUserName);
 
-  // app.route('/users/:userId')
-  // .get(getUserByID)
-  // .put(updateUser)
-  // .delete(deleteUser);
+  app.route('/users/:userId')
+  .get(getUserByID)
+  .put(updateUser)
+  .delete(deleteUser);
 
 }
 
