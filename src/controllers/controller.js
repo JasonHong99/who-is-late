@@ -55,9 +55,14 @@ const getUserByUserName = (req, res) => {
     if(err){
       res.send(err);
     }
-    res.json(user);
+    return user;
   });
 };
+
+const renderUserProfile = (req, res) => {
+  console.log("wut");
+  res.render('profile');
+}
 
 module.exports = {
   addNewUser,
@@ -65,5 +70,6 @@ module.exports = {
   getUserByID,
   updateUser,
   deleteUser,
-  getUserByUserName
+  getUserByUserName,
+  renderUserProfile
 }

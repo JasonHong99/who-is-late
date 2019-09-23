@@ -34,7 +34,7 @@ function validate(event, loginForm){
 //   $.ajax({
 //     url: "localhost:8080/users/5d80878f972c0653c2fd1679",
 //     type: "GET",
-//     dataType: "jsonp",
+//     dataType: "json",
 //     success: successFn,
 //     error: function(){
 //       console.log("you fucked up");
