@@ -49,18 +49,23 @@ const deleteUser = (req, res) => {
   });
 }
 
-const getUserByUserName = (req, res) => {
-  console.log(req.body);
+const getUserByUserName = (req, res, next) => {
   User.find({ userName: req.body.userName}, (err, user) => {
     if(err){
+      // res.render('error');
       res.send(err);
     }
-    return user;
+    // res.json(user);
+    var userInfo = JSON.stringify(user);
+    // console.log(userInfo);
+    // var userjson = JSON.parse(userInfo);
+    // console.log(typeof(userjson));
+    //console.log(userInfo);
+    res.render('profile', {user: userInfo});
   });
 };
 
 const renderUserProfile = (req, res) => {
-  console.log("wut");
   res.render('profile');
 }
 

@@ -11,14 +11,18 @@
   <title>who is late</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-  <link href="template.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/style.css" rel="stylesheet">
+  <link href="/template.css" rel="stylesheet">
 
 </head>
 
 <body>
   <!-- Page Content -->
+  <%
+  var user = user.substring(1, user.length-1);
+  userInfo = JSON.parse(user);
+  %>
   <div class="container emp-profile">
     <form method="post">
         <div class="row">
@@ -34,7 +38,7 @@
             <div class="col-md-6">
                 <div class="profile-head">
                             <h5>
-                                Kshiti Ghelani
+                                <%= userInfo.firstName %> <%= userInfo.lastName %>
                             </h5>
                             <h6>
                                 Web Developer and Designer
@@ -77,7 +81,7 @@
                                         <label>User Id</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Kshiti123</p>
+                                        <p><%= userInfo.userName %></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -85,31 +89,31 @@
                                         <label>Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Kshiti Ghelani</p>
+                                        <p><%= userInfo.firstName %> <%= userInfo.lastName %></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Email</label>
+                                        <label>City</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>kshitighelani@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Phone</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>123 456 7890</p>
+                                        <p><%= userInfo.city %></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Profession</label>
+                                        <label>State</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Web Developer and Designer</p>
+                                        <p><%= userInfo.state %></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Zip</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%= userInfo.zip %></p>
                                     </div>
                                 </div>
                     </div>
@@ -169,9 +173,9 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="main.js"></script>
+  <script src="/vendor/jquery/jquery.slim.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/main.js"></script>
 
 </body>
 

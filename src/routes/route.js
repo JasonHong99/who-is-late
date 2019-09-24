@@ -12,18 +12,17 @@ const routes = (app) => {
   .post(addNewUser);
 
   app.route('/users/:userName')
-  //.post(getUserByUserName);
-  .post((req, res, next) => {
-    getUserByUserName(req, res);
-    next();
-  }, (req, res, next) => {
-    renderUserProfile(req, res);
-  });
+  .post(getUserByUserName);
+  // .post((req, res) => {
+  //   renderUserProfile('profile', function(){
+  //
+  //   })
+  // });
 
-  app.route('/users/:userId')
-  .get(getUserByID)
-  .put(updateUser)
-  .delete(deleteUser);
+  // app.route('/users/:userId')
+  // .get(getUserByID)
+  // .put(updateUser)
+  // .delete(deleteUser);
 
 }
 
