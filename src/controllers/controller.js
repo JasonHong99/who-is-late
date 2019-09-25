@@ -9,7 +9,8 @@ const addNewUser = (req, res) => {
     if(err){
       res.send(err);
     }
-    res.json(user);
+    var userInfo = "[" + JSON.stringify(user) + "]";
+    res.render('profile', {user: userInfo});
   });
 };
 
@@ -55,12 +56,7 @@ const getUserByUserName = (req, res, next) => {
       // res.render('error');
       res.send(err);
     }
-    // res.json(user);
     var userInfo = JSON.stringify(user);
-    // console.log(userInfo);
-    // var userjson = JSON.parse(userInfo);
-    // console.log(typeof(userjson));
-    //console.log(userInfo);
     res.render('profile', {user: userInfo});
   });
 };
